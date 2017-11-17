@@ -14,9 +14,9 @@
 </head>
 <body>
 {% block js_sdk_body %}{{ bwbase_sdks_html('body') }}{% endblock %}
+
 <div class="website">
   <div class="website-top">
-
     <div class="container-fluid px-0 alerts-top">
       <div class="row no-gutters">
         <div class="col-12">
@@ -79,8 +79,15 @@
         </div>
       </div>
     </nav>
-    {% block body %}
-    {% endblock %}
+
+    <div class="container-fluid px-0">
+      <div class="row no-gutters">
+        <div class="col-12">
+          {% block body %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
   </div>
   <footer class="website-footer">
     <div class="container container-cta">
@@ -88,9 +95,9 @@
         <div class="col-xl-8 offset-xl-2 footer-cta" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
           <p class="footer-cta-title">Be part of the change!</p>
           <ul class="nav justify-content-center">
-            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="register.html">Register </a></li>
-            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="volunteer.html">Volunteering </a></li>
-            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="suggest-project.html">Suggest a project</a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="#">Register</a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="#">Volunteering</a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="#">Suggest a project</a></li>
           </ul>
         </div>
       </div>

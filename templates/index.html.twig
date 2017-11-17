@@ -1,9 +1,66 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('build/css/home.css') }}" />
+{% endblock %}
 
 {% block body %}
-  <div class="text-center my-5">
-    <h1>Welcome Home</h1>
-    <p>Under construction</p>
+  <div data-bs-parallax-bg="true" class="container-fluid hero home">
+    <div class="row justify-content-center hero-row align-items-center">
+      <div class="col-12 col-md-10">
+        <h1 class="hero-header">Welcome to Action 4 Malawi</h1>
+        <p class="hero-text">
+          We are working to connect Malawi’s most remote areas to the world’s development resources.
+        </p>
+        <a class="btn btn-outline-primary" role="button" href="#">Suggest a Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid home-about my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 text-center col-home-about">
+        <p class="lead">Action 4 Malawi is a volunteering and sharing community empowering the young members of Malawi’s remote villages and providing busy Westerners with a taste of age-old African wisdom. </p>
+        <a class="btn btn-outline-primary mt-1" role="button" href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid home-cards my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="card-deck">
+          <div class="card">
+            <img src="{{ asset('images/home/partners.png') }}" class="card-img-top">
+            <div class="card-body">
+              <h2 class="card-title">Partners </h2>
+              <p class="card-text">We have teamed up with a leading Malawian construction company as well as donors in Europe and in the US in order to provide that physical and educational infrastructure that is often sorely lacking on the ground. We week to build
+                bridges of shared means and communication.
+              </p>
+              <a class="btn btn-outline-primary" role="button" href="#">Read More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="{{ asset('images/home/volunteer.png') }}" class="card-img-top">
+            <div class="card-body">
+              <h2 class="card-title">Volunteer </h2>
+              <p class="card-text">Students in local schools are invited to participate in activities that connect them to the global population, most notably through pollution control initiatives and connecting local schools to educational centres in Europe and
+                the US.
+              </p>
+              <a class="btn btn-outline-primary" role="button" href="#">Read More</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="{{ asset('images/home/gallery.png') }}" class="card-img-top">
+            <div class="card-body">
+              <h2 class="card-title">Gallery </h2>
+              <p class="card-text">Please take a look at what has been done in 2017, year of the founding, and first funding of Action4Malawi. You can check out the development of the school we are building and the plastic clean up work we have comissioned from
+                the local students and community.
+              </p>
+              <a class="btn btn-outline-primary" role="button" href="#">View gallery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}

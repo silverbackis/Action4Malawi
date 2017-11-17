@@ -2,12 +2,13 @@ let webpack = require('webpack');
 let Encore = require('@symfony/webpack-encore');
 
 Encore
-    .enablePostCssLoader()
-    .cleanupOutputBeforeBuild()
-    .enableSourceMaps(!Encore.isProduction())
-    .addEntry('js/app', './assets/js/app.js')
-    .addStyleEntry('css/app', './assets/css/app.sass')
-    .enableSassLoader()
+  .enablePostCssLoader()
+  .cleanupOutputBeforeBuild()
+  .enableSourceMaps(!Encore.isProduction())
+  .addEntry('js/app', './assets/js/app.js')
+  .addStyleEntry('css/app', './assets/css/app.sass')
+  .addStyleEntry('css/home', './assets/css/home.sass')
+  .enableSassLoader()
 ;
 
 if (Encore.isProduction()) {

@@ -1,0 +1,23 @@
+@import "partials"
+
+.hero-row
+  padding: 45px 0
+  min-height: 250px
+
+.hero
+  +text-shadow
+  color: $white
+  background: url('images/hero.png') 50% 50% no-repeat
+  background-size: cover
+  .hero-header
+    +media-breakpoint-down(md)
+      font-size: 1.8rem
+  .hero-text
+    font-size: 1.3rem
+    +media-breakpoint-down(md)
+      font-size: 1rem
+  .btn
+    color: inherit
+    &:hover,
+    &:active
+      background: rgba($white, .3)
