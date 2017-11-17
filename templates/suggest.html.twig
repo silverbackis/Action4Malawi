@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('build/css/form.css') }}" />
+{% endblock %}
+
+{% block body %}
+  {% include '_hero.html.twig' with {
+    header: 'Be part of the change!'
+  } %}
+  {% embed '_generalText.html.twig' %}
+    {% block header %}
+      Suggest a project for Action 4 Malawi
+    {% endblock %}
+    {% block text %}
+      <p>We are just starting our work of connecting people. After the initial launch phase, we will be looking into further projects and developments.In the meantime, if you have a project you’d
+        like to suggest, please register and write to us there.</p>
+      <p>Please get in touch.</p>
+
+      <form class="form-container">
+        <div class="form-group">
+          <input class="form-control field" type="text" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <input class="form-control field" type="text" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input class="form-control field" type="text" placeholder="Phone Number">
+        </div>
+        <div class="form-group">
+          <input class="form-control field" type="text" placeholder="Describe your suggested project (max 250 words)">
+        </div>
+        <div class="form-group mt-5">
+          <button class="btn btn-primary btn-lg-rounded" type="button">Suggest Project</button>
+        </div>
+      </form>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

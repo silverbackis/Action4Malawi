@@ -8,6 +8,7 @@ Encore
   .addEntry('js/app', './assets/js/app.js')
   .addStyleEntry('css/app', './assets/css/app.sass')
   .addStyleEntry('css/home', './assets/css/home.sass')
+  .addStyleEntry('css/form', './assets/css/form.sass')
   .enableSassLoader()
 ;
 

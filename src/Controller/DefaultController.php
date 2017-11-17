@@ -31,7 +31,7 @@ class DefaultController extends AbstractController
      */
     public function register()
     {
-        return $this->redirectToRoute('home');
+        return $this->render('register.html.twig');
     }
 
     /**
@@ -39,7 +39,7 @@ class DefaultController extends AbstractController
      */
     public function suggest()
     {
-        return $this->redirectToRoute('home');
+        return $this->render('suggest.html.twig');
     }
 
     /**
