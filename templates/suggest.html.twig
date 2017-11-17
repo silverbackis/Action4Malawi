@@ -15,26 +15,13 @@
     {% endblock %}
     {% block text %}
       <p>We are just starting our work of connecting people. After the initial launch phase, we will be looking into further projects and developments.In the meantime, if you have a project you’d
-        like to suggest, please register and write to us there.</p>
-      <p>Please get in touch.</p>
-
-      <form class="form-container">
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Full Name">
-        </div>
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Phone Number">
-        </div>
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Describe your suggested project (max 250 words)">
-        </div>
-        <div class="form-group mt-5">
-          <button class="btn btn-primary btn-lg-rounded" type="button">Suggest Project</button>
-        </div>
-      </form>
+        like to suggest, please register and write to us here. Please get in touch.</p>
+      {{ form_start(form, {attr: {class: 'form-container', novalidate: 'true'}}) }}
+      {{ form_widget(form) }}
+      <div class="form-group mt-4 mb-0">
+        <button class="btn btn-primary btn-lg-rounded" type="submit">Suggest Project</button>
+      </div>
+      {{ form_end(form) }}
     {% endblock %}
   {% endembed %}
 {% endblock %}

@@ -4,3 +4,4 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         facebook_url: https://www.facebook.com/Action4Malawi/
+    form_themes: ['bootstrap_4_layout.html.twig']

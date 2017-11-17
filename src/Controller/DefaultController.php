@@ -2,7 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\ProjectSuggestion;
+use App\Entity\RegisteredUser;
+use App\Form\RegisterType;
+use App\Form\SuggestionType;
+use App\Utils\MailerUtils;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -29,17 +35,79 @@ class DefaultController extends AbstractController
     /**
      * @Route("register", name="register")
      */
-    public function register()
+    public function register(Request $request)
     {
-        return $this->render('register.html.twig');
+        $form = $this->createForm(RegisterType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mailer = $this->get(\Swift_Mailer::class);
+            /**
+             * @var RegisteredUser
+             */
+            $registeredUser = $form->getData();
+            $message = MailerUtils::createSwiftMessage(
+                'New Volunteer Registration',
+                $registeredUser->getEmail(),
+                $this->renderView(
+                    'emails/registered.html.twig',
+                    [
+                        'user' => $registeredUser
+                    ]
+                )
+            );
+            $mailer->send($message);
+            return $this->redirectToRoute('register_success');
+        }
+        return $this->render('register.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("register/success", name="register_success")
+     */
+    public function registerSuccess(Request $request)
+    {
+        return $this->render('registerSuccess.html.twig');
     }
 
     /**
      * @Route("suggest-project", name="suggest")
      */
-    public function suggest()
+    public function suggest(Request $request)
     {
-        return $this->render('suggest.html.twig');
+        $form = $this->createForm(SuggestionType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mailer = $this->get(\Swift_Mailer::class);
+            /**
+             * @var ProjectSuggestion
+             */
+            $suggestion = $form->getData();
+            $message = MailerUtils::createSwiftMessage(
+                'New Project Suggestion',
+                $suggestion->getEmail(),
+                $this->renderView(
+                    'emails/suggestion.html.twig',
+                    [
+                        'suggestion' => $suggestion
+                    ]
+                )
+            );
+            $mailer->send($message);
+            return $this->redirectToRoute('suggest_success');
+        }
+        return $this->render('suggest.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("suggest-project/success", name="suggest_success")
+     */
+    public function suggestSuccess()
+    {
+        return $this->render('suggestSuccess.html.twig');
     }
 
     /**
@@ -80,5 +148,12 @@ class DefaultController extends AbstractController
     public function contact()
     {
         return $this->render('contact.html.twig');
+    }
+
+    public static function getSubscribedServices()
+    {
+        return array_merge(parent::getSubscribedServices(), [
+           \Swift_Mailer::class, '?' . \Swift_Mailer::class
+        ]);
     }
 }

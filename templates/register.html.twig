@@ -15,56 +15,13 @@
     {% endblock %}
     {% block text %}
       <p>If you live in the US and Europe, would you like to travel to Malawi, the warm heart of Africa? Would you like to hear their stories and share experiences with the inhabitants?
-        If you are in Malawi, would you like to be part of the sharing conversation?</p>
-      <p>Please get in touch.</p>
-
-      <form class="form-container" action="">
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Full Name">
-        </div>
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Phone Number">
-        </div>
-        <div class="form-group">
-          <input class="form-control field" type="text" placeholder="Please let us know when you are available to volunteer">
-        </div>
-        <div class="text-left">
-          <div class="field-label mt-4 mb-1">
-            Preferred Sector(s)
-          </div>
-          <div class="form-check justify-content-start checkbox">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Group Volunteering
-            </label>
-          </div>
-          <div class="form-check justify-content-start checkbox">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Student Support
-            </label>
-          </div>
-          <div class="form-check justify-content-start checkbox">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Green Initiatives
-            </label>
-          </div>
-          <div class="form-check justify-content-start checkbox">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> School Building Initiatives
-            </label>
-          </div>
-          <div class="form-check justify-content-start checkbox">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Other
-            </label>
-          </div>
-        </div>
-        <div class="form-group mt-5 mb-0">
+        If you are in Malawi, would you like to be part of the sharing conversation? Please get in touch.</p>
+      {{ form_start(form, {attr: {class: 'form-container', novalidate: 'true'}}) }}
+        {{ form_widget(form) }}
+        <div class="form-group mt-4 mb-0">
           <button class="btn btn-primary btn-lg-rounded" type="submit">Register Now</button>
         </div>
-      </form>
+      {{ form_end(form) }}
     {% endblock %}
   {% endembed %}
 {% endblock %}

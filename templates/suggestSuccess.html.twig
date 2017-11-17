@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {% set hero_extra %}
+    <p>We appreciate your project suggestion and will take it into consideration</p>
+  {% endset %}
+  {% include '_hero.html.twig' with {
+  header: 'Thank you for your suggestion!'
+  } %}
+{% endblock %}
