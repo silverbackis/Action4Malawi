@@ -4,11 +4,16 @@
     "minimum-stability": "beta",
     "require": {
         "php": "^7.0.8",
+        "sensio/framework-extra-bundle": "^5.0",
+        "silverbackis/bw-base-bundle": "@dev",
+        "sonata-project/seo-bundle": "^2.3",
+        "symfony/asset": "^3.4@beta",
         "symfony/console": "^3.4",
         "symfony/dotenv": "^3.4",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^3.4",
         "symfony/lts": "^3",
+        "symfony/twig-bundle": "^3.4@beta",
         "symfony/web-server-bundle": "^3.4@beta",
         "symfony/webpack-encore-pack": "^1.0",
         "symfony/yaml": "^3.4"

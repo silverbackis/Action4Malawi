@@ -1,0 +1,47 @@
+bw_base:
+  page:
+    metas:
+      name:
+        #twitter:site:       '@silverbackis'
+        #twitter:image:      '%opengraph_base%opengraph_image1.png'
+        # auto = same as Sonata SEO title tag
+        twitter:title:      'auto'
+        # auto = same as meta description (from either Sonata SEO or BW Base)
+        twitter:description: 'auto'
+      property:
+        # auto = same as Sonata SEO title tag
+        - { property: "og:title", content: "auto" }
+        # auto = same as meta description (from either Sonata SEO or BW Base)
+        - { property: "og:description", content: "auto" }
+        # auto = get URL from the current request
+        - { property: "og:url", content: "auto" }
+        #- { property: "og:image", content: "%opengraph_base%opengraph_image1.png" }
+        #- { property: "og:image:width", content: "500" }
+        #- { property: "og:image:height", content: "500" }
+        #- { property: "og:image", content: "%opengraph_base%opengraph_image2.png" }
+    links:
+      rel:
+        #apple-touch-icon-precomposed:
+        #  - { sizes: 57x57, href: '%favicon_base%apple-touch-icon-57x57.png' }
+        #icon:
+        #  - { type: image/png, sizes: 196x196, href: '%favicon_base%favicon-196x196.png' }
+    js_sdk:
+      google_analytics:
+        enabled: false
+        id: UA-12345678-01
+        domain: www.yourdomain.com
+      woopra:
+        enabled: false
+        domain: www.yourdomain.com
+      facebook_pixel:
+        enabled: false
+        id: pixelID
+      facebook:
+        enabled: false
+        app_id: 1234567890
+        xfbml: true
+        version: 'v2.8'
+        language: en_GB
+        login_status_check: false
+        debug: false
+      twitter: false
