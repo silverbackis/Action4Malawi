@@ -12,67 +12,132 @@
     <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" />
   {% endblock %}
 </head>
-<body class="website">
+<body>
 {% block js_sdk_body %}{{ bwbase_sdks_html('body') }}{% endblock %}
-<div class="website-top">
-  <nav class="navbar navbar-light navbar-expand-lg navbar-top" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{{ path('home') }}">
-        <img src="{{ asset('images/A4MLogo.svg') }}" class="logo">
-      </a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse flex-column" id="navcol-1">
-        <ul class="nav navbar-nav top" id="nav-top">
-          <li class="nav-item">
-            <a class="nav-link top" href="#">Donate</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link top" href="#">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link top" href="#">Suggest a Project</a>
-          </li>
-          <li class="nav-item d-none d-lg-block d-xl-block facebook">
-            <a class="nav-link facebook" href="https://www.facebook.com/Action4Malawi/" target="_blank">
-              <svg width="35" height="35" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="Header" transform="translate(-1430.000000, -41.000000)">
-                    <g id="facebook-logo" transform="translate(1430.000000, 41.000000)">
-                      <circle id="Oval" fill="#D8D8D8" cx="17.5" cy="17.5" r="17.5"></circle>
-                      <path
-                          d="M22.5115697,6.00468153 L19.3930582,6 C15.8899312,6 13.6253909,8.31860386 13.6253909,11.9065255 L13.6253909,14.6302375 L10.4896811,14.6302375 C10.2198249,14.6302375
-                          10,14.8483966 10,15.1189888 L10,19.0655154 C10,19.3348592 10.2198249,19.5542667 10.4896811,19.5542667 L13.6253909,19.5542667 L13.6253909,29.5112487 C13.6253909,29.7805925
-                          13.8452158,30 14.1163227,30 L18.2057536,30 C18.4768605,30 18.6966854,29.7805925 18.6966854,29.5112487 L18.6966854,19.5542667 L22.362414,19.5542667 C22.633521,19.5542667
-                          22.8524078,19.3348592 22.8524078,19.0655154 L22.8545966,15.1189888 C22.8545966,14.9897787 22.8020638,14.8655622 22.710444,14.772868 C22.6188243,14.6814221 22.4943715,
-                          14.6302375 22.3636648,14.6302375 L18.6966854,14.6302375 L18.6966854,12.3213087 C18.6966854,11.211787 18.9618512,10.6484434 20.4093183,10.6484434 L22.5103189,10.647195
-                          C22.7814259,10.647195 23,10.4277875 23,10.1584437 L23,6.49499337 C23,6.22408905 22.7814259,6.00592993 22.5115697,6.00468153 Z"
-                          id="Path" fill="#FFF"></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav main"">
-          <li class="nav-item"><a class="nav-link main" href="#">About A4M</a></li>
-          <li class="nav-item"><a class="nav-link main" href="#">Partners</a></li>
-          <li class="nav-item"><a class="nav-link main" href="#">Volunteering</a></li>
-          <li class="nav-item"><a class="nav-link main" href="#">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link main" href="#">Contact</a></li>
-        </ul>
+<div class="website">
+  <div class="website-top">
+
+    <div class="container-fluid px-0 alerts-top">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="alert alert-info mb-0 text-center font-weight-bold">
+            This website is under construction and is not fully functioning yet
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  {% block body %}
-  {% endblock %}
+
+    <nav class="navbar navbar-light navbar-expand-lg navbar-top" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('home') }}">
+          <img src="{{ asset('images/A4MLogo.svg') }}" class="logo">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-column" id="navcol-1">
+          <ul class="nav navbar-nav top" id="nav-top">
+            <li class="nav-item">
+              <a class="nav-link top" href="#">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link top" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link top" href="#">Suggest a Project</a>
+            </li>
+            <li class="nav-item d-none d-lg-block d-xl-block facebook">
+              <a class="nav-link facebook" href="{{ facebook_url }}" target="_blank" rel="noopener">
+                <svg width="35" height="35" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Header" transform="translate(-1430.000000, -41.000000)">
+                      <g id="facebook-logo" transform="translate(1430.000000, 41.000000)">
+                        <circle id="Oval" fill="#D8D8D8" cx="17.5" cy="17.5" r="17.5"></circle>
+                        <path
+                            d="M22.5115697,6.00468153 L19.3930582,6 C15.8899312,6 13.6253909,8.31860386 13.6253909,11.9065255 L13.6253909,14.6302375 L10.4896811,14.6302375 C10.2198249,14.6302375
+                            10,14.8483966 10,15.1189888 L10,19.0655154 C10,19.3348592 10.2198249,19.5542667 10.4896811,19.5542667 L13.6253909,19.5542667 L13.6253909,29.5112487 C13.6253909,29.7805925
+                            13.8452158,30 14.1163227,30 L18.2057536,30 C18.4768605,30 18.6966854,29.7805925 18.6966854,29.5112487 L18.6966854,19.5542667 L22.362414,19.5542667 C22.633521,19.5542667
+                            22.8524078,19.3348592 22.8524078,19.0655154 L22.8545966,15.1189888 C22.8545966,14.9897787 22.8020638,14.8655622 22.710444,14.772868 C22.6188243,14.6814221 22.4943715,
+                            14.6302375 22.3636648,14.6302375 L18.6966854,14.6302375 L18.6966854,12.3213087 C18.6966854,11.211787 18.9618512,10.6484434 20.4093183,10.6484434 L22.5103189,10.647195
+                            C22.7814259,10.647195 23,10.4277875 23,10.1584437 L23,6.49499337 C23,6.22408905 22.7814259,6.00592993 22.5115697,6.00468153 Z"
+                            id="Path" fill="#FFF"></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav main"">
+            <li class="nav-item"><a class="nav-link main" href="#">About A4M</a></li>
+            <li class="nav-item"><a class="nav-link main" href="#">Partners</a></li>
+            <li class="nav-item"><a class="nav-link main" href="#">Volunteering</a></li>
+            <li class="nav-item"><a class="nav-link main" href="#">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link main" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+  </div>
+  <footer class="website-footer">
+    <div class="container container-cta">
+      <div class="row">
+        <div class="col-xl-8 offset-xl-2 footer-cta" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <p class="footer-cta-title">Be part of the change!</p>
+          <ul class="nav justify-content-center">
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="register.html">Register </a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="volunteer.html">Volunteering </a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="suggest-project.html">Suggest a project</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center text-md-left">
+      <div class="row justify-content-center">
+        <div class="col col-md-10 footer-heading-col">
+          <h1 class="footer-heading">Navigation</h1>
+        </div>
+      </div>
+      <div class="row no-gutters row-footer-nav-links">
+        <div class="col-1 d-none d-md-flex"></div>
+        <div class="col-12 col-md">
+          <ul class="nav flex-column footer-link-nav">
+            <li class="nav-item footer"><a class="nav-link" href="{{ path('home') }}">Home </a></li>
+            <li class="nav-item footer"><a class="nav-link" href="#">About A4M</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md">
+          <ul class="nav flex-column footer-link-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Partners </a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Volunteering </a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md">
+          <ul class="nav flex-column footer-link-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Suggest a project</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Gallery </a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md">
+          <ul class="nav flex-column footer-link-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Contact </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ facebook_url }}" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="col-1 d-none d-md-flex"></div>
+      </div>
+      <div class="row">
+        <div class="col-12 footer-copyright text-center">
+          <p class="copyright copyright-footer-text">Action 4 Malawi &copy;{{ "now"|date("Y") }} - All rights reserved</p>
+          <p class="site-by copyright-footer-text"><a href="https://www.britishwebsites.co.uk" target="_blank" class="site-by" rel="noopener">Site by British Websites</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
-<footer class="website-footer">
-  FOOTER <a href="#">I AM A LINK</a>
-</footer>
 {% block javascripts %}
   <script type="application/javascript" src="{{ asset('build/js/app.js') }}"></script>
 {% endblock %}

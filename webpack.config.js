@@ -1,4 +1,5 @@
-var Encore = require('@symfony/webpack-encore');
+let webpack = require('webpack');
+let Encore = require('@symfony/webpack-encore');
 
 Encore
     .enablePostCssLoader()
@@ -25,4 +26,13 @@ if (Encore.isProduction()) {
   ;
 }
 
-module.exports = Encore.getWebpackConfig();
+let config = Encore.getWebpackConfig();
+
+config.plugins.push(new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  'window.jQuery': 'jquery',
+  Popper: ['popper.js', 'default']
+}));
+
+module.exports = config;

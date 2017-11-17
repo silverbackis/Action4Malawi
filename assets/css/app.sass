@@ -6,17 +6,26 @@ a
   &:hover
     text-decoration: none
 
-html
+html,
+body
   height: 100%
 
 .website
+  +box-shadow
   display: flex
   flex-direction: column
   height: 100%
+  max-width: 1800px
+  margin: 0 auto
+  overflow: hidden
   .website-top
     flex: 1 0 auto
   .website-footer
     flex: 0 1 auto
+
+.alerts-top
+  .alert
+    border-radius: 0
 
 .navbar-top
   +box-shadow
@@ -30,6 +39,7 @@ html
     font-size: 1.1rem
 
   .navbar-brand
+    padding: 0
     +media-breakpoint-up(sm)
       padding: 10px
     +media-breakpoint-up(md)
@@ -67,3 +77,66 @@ html
       &.main
         margin-top: 20px
 
+
+.website-footer
+  background-color: $gray-200
+  margin-top: 120px
+  .container-cta
+    margin-top: -90px
+    margin-bottom: 30px
+    .footer-cta
+      background-color: #293c45
+      text-align: center
+      padding: 30px
+      border-radius: 14px
+      border-style: solid
+      border-width: 4px
+      border-color: $white
+      box-shadow: 0 2px 6px $gray-600
+      z-index: 1
+      width: 95%
+      margin-left: auto
+      margin-right: auto
+      +media-breakpoint-up(md)
+        width: 70%
+      .footer-cta-title
+        color: $white
+        font-size: 1.8rem
+      .nav-link.nav-cta
+        font-size: 1.5rem
+        transition: color .3s
+        &:hover
+          color: $white
+
+  .footer-heading
+    color: $blue
+    text-transform: uppercase
+    font-size: 1.1rem
+    margin-left: 15px
+    +media-breakpoint-up(md)
+      font-size: 1rem
+    +media-breakpoint-up(lg)
+      font-size: 1.1rem
+    +media-breakpoint-up(xl)
+      font-size: 1.2rem
+  .row-footer-nav-links .nav-link
+    color: #808080
+    text-transform: uppercase
+    font-size: .8rem
+    letter-spacing: 1px
+    font-weight: 600
+    white-space: nowrap
+    +media-breakpoint-up(sm)
+      font-size: .85rem
+    +media-breakpoint-up(md)
+      font-size: .9rem
+    +media-breakpoint-up(lg)
+      font-size: 1rem
+
+  .copyright
+    margin-top: 50px
+    margin-bottom: 5px
+
+  .copyright-footer-text
+    color: #808080
+    font-size: .75rem
