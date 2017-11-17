@@ -8,7 +8,7 @@
   {% block link_tags %}{{ bwbase_link_tags() }}{% endblock %}
   {% block js_sdk_head %}{{ bwbase_sdks_html('head') }}{% endblock %}
   {% block stylesheets %}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" />
     <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" />
   {% endblock %}
 </head>
@@ -39,13 +39,13 @@
         <div class="collapse navbar-collapse flex-column" id="navcol-1">
           <ul class="nav navbar-nav top" id="nav-top">
             <li class="nav-item">
-              <a class="nav-link top" href="#">Donate</a>
+              <a class="nav-link top" href="{{ path('donate') }}">Donate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link top" href="#">Register</a>
+              <a class="nav-link top" href="{{ path('register') }}">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link top" href="#">Suggest a Project</a>
+              <a class="nav-link top" href="{{ path('suggest') }}">Suggest a Project</a>
             </li>
             <li class="nav-item d-none d-lg-block d-xl-block facebook">
               <a class="nav-link facebook" href="{{ facebook_url }}" target="_blank" rel="noopener">
@@ -70,11 +70,11 @@
             </li>
           </ul>
           <ul class="nav navbar-nav main"">
-            <li class="nav-item"><a class="nav-link main" href="#">About A4M</a></li>
-            <li class="nav-item"><a class="nav-link main" href="#">Partners</a></li>
-            <li class="nav-item"><a class="nav-link main" href="#">Volunteering</a></li>
-            <li class="nav-item"><a class="nav-link main" href="#">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link main" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link main" href="{{ path('about') }}">About A4M</a></li>
+            <li class="nav-item"><a class="nav-link main" href="{{ path('partners') }}">Partners</a></li>
+            <li class="nav-item"><a class="nav-link main" href="{{ path('volunteering') }}">Volunteering</a></li>
+            <li class="nav-item"><a class="nav-link main" href="{{ path('gallery') }}">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link main" href="{{ path('contact') }}">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -95,9 +95,9 @@
         <div class="col-xl-8 offset-xl-2 footer-cta" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
           <p class="footer-cta-title">Be part of the change!</p>
           <ul class="nav justify-content-center">
-            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="#">Register</a></li>
-            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="#">Volunteering</a></li>
-            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="#">Suggest a project</a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="{{ path('register') }}">Register</a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="{{ path('volunteering') }}">Volunteering</a></li>
+            <li class="nav-item nav-cta"><a class="nav-link nav-cta" href="{{ path('suggest') }}">Suggest a project</a></li>
           </ul>
         </div>
       </div>
@@ -113,24 +113,24 @@
         <div class="col-12 col-md">
           <ul class="nav flex-column footer-link-nav">
             <li class="nav-item footer"><a class="nav-link" href="{{ path('home') }}">Home </a></li>
-            <li class="nav-item footer"><a class="nav-link" href="#">About A4M</a></li>
+            <li class="nav-item footer"><a class="nav-link" href="{{ path('about') }}">About A4M</a></li>
           </ul>
         </div>
         <div class="col-12 col-md">
           <ul class="nav flex-column footer-link-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Partners </a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Volunteering </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('partners') }}">Partners </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('volunteering') }}">Volunteering </a></li>
           </ul>
         </div>
         <div class="col-12 col-md">
           <ul class="nav flex-column footer-link-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Suggest a project</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Gallery </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('suggest') }}">Suggest a project</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('gallery') }}">Gallery </a></li>
           </ul>
         </div>
         <div class="col-12 col-md">
           <ul class="nav flex-column footer-link-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Contact </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">Contact </a></li>
             <li class="nav-item"><a class="nav-link" href="{{ facebook_url }}" target="_blank" rel="noopener">Facebook</a></li>
           </ul>
         </div>

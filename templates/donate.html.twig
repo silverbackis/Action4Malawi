@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {% include '_hero.html.twig' with {
+    header: 'Be part of the change!'
+  } %}
+  {% embed '_generalText.html.twig' %}
+    {% block header %}
+      Donate to Action 4 Malawi
+    {% endblock %}
+    {% block text %}
+      <p>We appreciate all donation and money donated goes to Malawi to help with current and upcoming projects.</p>
+      <a class="btn btn-primary mt-3 btn-lg-rounded" role="button" href="https://paypal.co.uk" rel="noopener">
+        <img src="{{ asset('images/btnDonate.svg') }}" class="btn-donate">
+      </a>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

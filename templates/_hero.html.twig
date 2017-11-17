@@ -1,0 +1,8 @@
+<div data-bs-parallax-bg="true" class="container-fluid hero home">
+  <div class="row justify-content-center hero-row align-items-center">
+    <div class="col-12 col-md-10">
+      <h1 class="hero-header">{{ header }}</h1>
+      {{ hero_extra|default(false) ? hero_extra : '' }}
+    </div>
+  </div>
+</div>

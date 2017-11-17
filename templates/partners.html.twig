@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {% include '_hero.html.twig' with {
+    header: 'Be part of the change!'
+  } %}
+  {% embed '_generalText.html.twig' %}
+    {% block header %}
+      Action 4 Malawi Partners
+    {% endblock %}
+    {% block text %}
+      <p>Action4Malawi, at its heart, is an idea. As technological advances allow faster and more direct communication, we want to help reduce the space between remote Malawi and the rest of the world. We see connecting donors and volunteers in Europe
+        and the US to remote villages in this beautiful country as being internal to building bridges across continents and communities.</p>
+      <p>We currently partner with youth programs in London and in Malawi as well as corporate citizens both in Malawi and in Europe and America. </p>
+      <a class="btn btn-outline-primary light-hover mt-3" role="button" href="http://action4london.com" target="_blank" rel="noopener">
+        <img src="{{ asset('images/btnPartners.png') }}" class="btn-partners" />
+      </a>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

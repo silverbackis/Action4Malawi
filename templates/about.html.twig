@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {% include '_hero.html.twig' with {
+    header: 'Be part of the change!'
+  } %}
+  {% embed '_generalText.html.twig' %}
+    {% block header %}
+      About Action 4 Malawi
+    {% endblock %}
+    {% block text %}
+      <p>Action4Malawi is first and foremost a bridge-building idea. Now that technology enables us to communicate at minimal cost across continents, we can share our lives with others on the other side of the planet, almost instantaneously, and at very
+        low cost. Our neighbours are now the whole planet. We would like to see Action4Malawi as an effort that is based on this consciousness. </p>
+      <p>In concrete terms we can now share our experiences, our joyful moments, our moments of need and of course our resources be they educational, cultural or financial. </p>
+      <p>Born in September 2017 of the ten year friendship between a community organiser in Malawi and a filmmaker in London, Action4Malawi aims to bring the wisdom and joyful community spirit of the warm heart of Africa to an often dry West and the resources,
+        experience and goodwill from the prosperous West to a country that is gradually climbing out of severe poverty.&nbsp; </p>
+      <p>We will start small, focussing on the deep need for proper physical school facilities in a small town that is off the grid (no electricity or running water) and will be showing the contributors the improving educational experience in our first
+        school. In concrete terms, November 2017 will see the foundations go down for a dormitory for school-children whose 2 hour+ daily walking commute to school could be used focussing on educational time. </p>
+      <p>Thank you all.</p>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

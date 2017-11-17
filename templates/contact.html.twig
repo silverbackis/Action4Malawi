@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {% include '_hero.html.twig' with {
+    header: 'Be part of the change!'
+  } %}
+  {% embed '_generalText.html.twig' %}
+    {% block header %}
+      Contact Action 4 Malawi
+    {% endblock %}
+    {% block text %}
+      <p>Feel free to get in touch with us. If you would like to volunteer, suggest a project, or something else the forms do you can visit the register page.</p>
+      <hr/>
+      <h3>Malawi</h3>
+      <p>If you would like a direct contact to Malawi please contact Anthony Weston by email </p><a class="btn btn-outline-primary" role="button" href="mailto:aw@action4malawi.com">aw@action4malawi.com </a>
+      <hr/>
+      <h3>Rest of the world</h3>
+      <p>If you would like a direct contact Action 4 Malawi about anything else please contact Anthony Haden-West&nbsp; </p><a class="btn btn-outline-primary" role="button" href="mailto:ahw@action4malawi.com">ahw@action4malawi.com</a>
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

@@ -10,9 +10,22 @@ body
   height: 100%
   min-width: 320px
 
+h1,
+h2
+  font-weight: 400
+
 .btn-outline-primary
   text-transform: uppercase
   font-size: .9rem
   letter-spacing: .1rem
   padding: 10px 40px
   background: rgba($white, .2)
+  &.light-hover
+    &:hover
+      background: $gray-100
+      border-color: $green
+
+.btn-lg-rounded
+  width: 400px
+  padding: 18px 20px
+  border-radius: 40px
