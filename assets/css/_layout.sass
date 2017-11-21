@@ -90,19 +90,27 @@
       border-color: $white
       box-shadow: 0 2px 6px $gray-600
       z-index: 1
-      width: 95%
+      width: 85%
       margin-left: auto
       margin-right: auto
       +media-breakpoint-up(md)
         width: 70%
       .footer-cta-title
         color: $white
-        font-size: 1.8rem
+        font-size: 1.2rem
+        +media-breakpoint-up(md)
+          font-size: 1.8rem
+      .nav-item.nav-cta
+        width: 100%
+        +media-breakpoint-up(md)
+          width: auto
       .nav-link.nav-cta
-        font-size: 1.5rem
+        font-size: 1rem
         transition: color .3s
         &:hover
           color: $white
+        +media-breakpoint-up(md)
+          font-size: 1.5rem
 
   .footer-heading
     color: $blue

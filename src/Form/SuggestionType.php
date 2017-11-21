@@ -35,7 +35,7 @@ class SuggestionType extends AbstractType
             ->add('suggestion', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Describe your suggested project (max 1000 characters)'
+                    'placeholder' => 'Describe your suggested project'
                 ]
             ])
         ;

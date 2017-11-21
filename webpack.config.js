@@ -6,9 +6,11 @@ Encore
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
   .addEntry('js/app', './assets/js/app.js')
+  .addEntry('js/gallery', './assets/js/gallery.js')
   .addStyleEntry('css/app', './assets/css/app.sass')
   .addStyleEntry('css/home', './assets/css/home.sass')
   .addStyleEntry('css/form', './assets/css/form.sass')
+  .addStyleEntry('css/gallery', './assets/css/gallery.sass')
   .enableSassLoader()
 ;
 

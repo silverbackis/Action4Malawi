@@ -17,7 +17,13 @@
       <p>We are just starting our work of connecting people. After the initial launch phase, we will be looking into further projects and developments.In the meantime, if you have a project you’d
         like to suggest, please register and write to us here. Please get in touch.</p>
       {{ form_start(form, {attr: {class: 'form-container', novalidate: 'true'}}) }}
-      {{ form_widget(form) }}
+      {{ form_row(form.fullName) }}
+      {{ form_row(form.email) }}
+      {{ form_row(form.phone) }}
+      <div class="form-row">
+        {{ form_widget(form.suggestion) }}
+        <small class="form-text text-muted w-100 text-right font-italic">max 1000 characters</small>
+      </div>
       <div class="form-group mt-4 mb-0">
         <button class="btn btn-primary btn-lg-rounded" type="submit">Suggest Project</button>
       </div>

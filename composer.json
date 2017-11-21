@@ -4,11 +4,13 @@
     "minimum-stability": "beta",
     "require": {
         "php": "^7.0.8",
+        "liip/imagine-bundle": "^2.0@dev",
         "sensio/framework-extra-bundle": "^5.0",
         "silverbackis/bw-base-bundle": "@dev",
         "sonata-project/seo-bundle": "^2.3",
         "symfony/asset": "^3.4@beta",
         "symfony/console": "^3.4",
+        "symfony/debug-bundle": "^3.4@beta",
         "symfony/dotenv": "^3.4",
         "symfony/flex": "^1.0",
         "symfony/form": "^3.4@beta",
@@ -59,7 +61,7 @@
     "extra": {
         "symfony": {
             "id": "01BZ2PGAG8ECWYBF1CHZKNXATK",
-            "allow-contrib": false
+            "allow-contrib": "true"
         }
     }
 }

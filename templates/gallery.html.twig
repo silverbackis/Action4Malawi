@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('build/css/gallery.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+  <script type="application/javascript" src="{{ asset('build/js/gallery.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+  {% include '_hero.html.twig' with {
+    header: 'Be part of the change!'
+  } %}
+  <div class="container-fluid my-5 text-center general-text">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h2>Action 4 Malawi Gallery</h2>
+        <div class="container">
+          <div class="row gallery-thumbs justify-content-center justify-content-sm-start">
+            {% for image in gallery.images %}
+              {% include '_galleryThumb.html.twig' %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include '_photoswipe.html.twig' %}
+{% endblock %}

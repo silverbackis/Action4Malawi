@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\GalleryImageCollection;
 use App\Entity\ProjectSuggestion;
 use App\Entity\RegisteredUser;
 use App\Form\RegisterType;
 use App\Form\SuggestionType;
 use App\Utils\MailerUtils;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,6 +18,16 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class DefaultController extends AbstractController
 {
+    /**
+     * @var string
+     */
+    private $projectDir;
+
+    public function __construct(string $projectDir)
+    {
+        $this->projectDir = $projectDir;
+    }
+
     /**
      * @Route("", name="home")
      */
@@ -139,7 +151,12 @@ class DefaultController extends AbstractController
      */
     public function gallery()
     {
-        return $this->redirectToRoute('home');
+        $finder = new Finder();
+        $imageFiles = $finder->files()->name('/\.(jpg|png)$/')->in($this->projectDir . '/public/images/gallery');
+        $galleryImages = new GalleryImageCollection($imageFiles, $this->projectDir . '/public/');
+        return $this->render('gallery.html.twig', [
+            'gallery' => $galleryImages
+        ]);
     }
 
     /**
