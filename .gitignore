@@ -1,4 +1,5 @@
 /.idea/
+/public/media/cache/*
 ###> symfony/framework-bundle ###
 .env
 /public/bundles/
