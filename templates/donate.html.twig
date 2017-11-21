@@ -10,9 +10,17 @@
     {% endblock %}
     {% block text %}
       <p>We appreciate all donation and money donated goes to Malawi to help with current and upcoming projects.</p>
-      <a class="btn btn-primary mt-3 btn-lg-rounded" role="button" href="https://paypal.co.uk" rel="noopener">
-        <img src="{{ asset('images/btnDonate.svg') }}" class="btn-donate">
-      </a>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="business" value="ahw@action4malawi.com" />
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="item_name" value="Donation to Action 4 Malawi" />
+        <input type="hidden" name="item_number" value="A4M" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <button type="submit" role="button" class="btn btn-primary mt-3 btn-lg-rounded">
+          <img src="{{ asset('images/btnDonate.svg') }}" class="btn-donate">
+        </button>
+        <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+      </form>
     {% endblock %}
   {% endembed %}
 {% endblock %}
