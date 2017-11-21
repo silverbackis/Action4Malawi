@@ -31,3 +31,6 @@ services:
     App\Controller\DefaultController:
         arguments:
             $projectDir: '%kernel.project_dir%'
+
+    Sonata\SeoBundle\Seo\SeoPageInterface:
+        alias: 'sonata.seo.page'

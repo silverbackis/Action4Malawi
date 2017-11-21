@@ -8,6 +8,7 @@ use App\Entity\RegisteredUser;
 use App\Form\RegisterType;
 use App\Form\SuggestionType;
 use App\Utils\MailerUtils;
+use Sonata\SeoBundle\Seo\SeoPageInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,6 +29,11 @@ class DefaultController extends AbstractController
         $this->projectDir = $projectDir;
     }
 
+    private function setTitle(string $title)
+    {
+        $this->get(SeoPageInterface::class)->setTitle($title . ' - ' . $this->get(SeoPageInterface::class)->getTitle());
+    }
+
     /**
      * @Route("", name="home")
      */
@@ -41,6 +47,7 @@ class DefaultController extends AbstractController
      */
     public function donate()
     {
+        $this->setTitle('Donate');
         return $this->render('donate.html.twig');
     }
 
@@ -49,6 +56,7 @@ class DefaultController extends AbstractController
      */
     public function register(Request $request)
     {
+        $this->setTitle('Register to Volunteer');
         $form = $this->createForm(RegisterType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -80,6 +88,7 @@ class DefaultController extends AbstractController
      */
     public function registerSuccess(Request $request)
     {
+        $this->setTitle('Successfully Registered');
         return $this->render('registerSuccess.html.twig');
     }
 
@@ -88,6 +97,7 @@ class DefaultController extends AbstractController
      */
     public function suggest(Request $request)
     {
+        $this->setTitle('Suggest a Project');
         $form = $this->createForm(SuggestionType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -119,6 +129,7 @@ class DefaultController extends AbstractController
      */
     public function suggestSuccess()
     {
+        $this->setTitle('Successfully Suggested Project');
         return $this->render('suggestSuccess.html.twig');
     }
 
@@ -127,6 +138,7 @@ class DefaultController extends AbstractController
      */
     public function about()
     {
+        $this->setTitle('About');
         return $this->render('about.html.twig');
     }
 
@@ -135,6 +147,7 @@ class DefaultController extends AbstractController
      */
     public function partners()
     {
+        $this->setTitle('Partners');
         return $this->render('partners.html.twig');
     }
 
@@ -143,6 +156,7 @@ class DefaultController extends AbstractController
      */
     public function volunteering()
     {
+        $this->setTitle('Volunteering');
         return $this->render('volunteering.html.twig');
     }
 
@@ -151,6 +165,7 @@ class DefaultController extends AbstractController
      */
     public function gallery()
     {
+        $this->setTitle('Gallery');
         $finder = new Finder();
         $imageFiles = $finder->files()->name('/\.(jpg|png)$/')->in($this->projectDir . '/public/images/gallery');
         $galleryImages = new GalleryImageCollection($imageFiles, $this->projectDir . '/public/');
@@ -164,13 +179,15 @@ class DefaultController extends AbstractController
      */
     public function contact()
     {
+        $this->setTitle('Contact');
         return $this->render('contact.html.twig');
     }
 
     public static function getSubscribedServices()
     {
         return array_merge(parent::getSubscribedServices(), [
-           \Swift_Mailer::class, '?' . \Swift_Mailer::class
+            SeoPageInterface::class,
+           '?' . \Swift_Mailer::class
         ]);
     }
 }
