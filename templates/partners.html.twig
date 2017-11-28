@@ -11,9 +11,27 @@
     {% block text %}
       {{ page_content('partners') }}
 
-      <a class="btn btn-outline-primary light-hover mt-3" role="button" href="http://action4london.com" target="_blank" rel="noopener">
-        <img src="{{ asset('images/btnPartners.png') }}" class="btn-partners" />
-      </a>
+      <div class="container-fluid partners-container mt-5">
+        <div class="row">
+          <div class="col-12 btn-partners">
+            <span class="partner-shadow">
+              <img src="{{ asset('images/btnPartners.png') }}" class="partner-logo a4l" alt="Action 4 London Logo" />
+            </span>
+          </div>
+        </div>
+        <div class="row partner-row-bottom align-items-center">
+          <div class="col-6">
+            <span class="partner-shadow">
+              <img src="{{ asset('images/national-bank.png') }}" class="partner-logo nb" alt="National Bank of Malawi Logo" />
+            </span>
+          </div>
+          <div class="col-6">
+            <span class="partner-shadow">
+              <img src="{{ asset('images/ywt.png') }}" class="partner-logo ywt" alt="YWT Logo" />
+            </span>
+          </div>
+        </div>
+      </div>
     {% endblock %}
   {% endembed %}
 {% endblock %}

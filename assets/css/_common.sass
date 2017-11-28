@@ -40,9 +40,23 @@
     height: 1px
     background-color: rgba($black, 0.2)
 
-.btn-partners
-  width: 100%
+.partners-container
   max-width: 414px
+  .partner-row-bottom
+    height: 160px
+  .partner-shadow
+    +box-shadow
+    max-height: 160px
+    height: 100%
+    position: relative
+    display: block
+    padding: 15px
+  .partner-logo
+    width: 100%
+    max-height: 100%
+    position: relative
+    &.ywt
+      max-height: 90px
 
 .btn-donate
   width: 100%
