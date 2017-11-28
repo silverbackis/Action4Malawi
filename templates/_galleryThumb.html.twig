@@ -1,6 +1,6 @@
 <li class="col-10 col-sm-4 col-lg-3 gallery-thumb" itemscope itemtype="https://schema.org/ImageGallery">
   <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">
-    <a class="gallery-link" href="{{ asset(image.path) }}" itemprop="contentUrl">
+    <a class="gallery-link" href="{{  asset('/images/gallery' ~ image.path) }}" itemprop="contentUrl">
       <div class="cover">
         <img src="{{ asset(image.path)|imagine_filter('thumbnail') }}" class="gallery-image" itemprop="thumbnail" alt="Gallery Image" />
       </div>
@@ -8,9 +8,10 @@
     </a>
     <meta itemprop="width" content="{{ image.width }}">
     <meta itemprop="height" content="{{ image.height }}">
-    {# <figcaption itemprop="caption description">
-      Long image description
-      <span itemprop="copyrightHolder">Photo: AP</span>
-    </figcaption> #}
+    {% if image.caption %}
+      <figcaption itemprop="caption description" class="sr-only">
+        {{ image.caption }}
+      </figcaption>
+    {% endif %}
   </figure>
 </li>

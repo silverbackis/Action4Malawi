@@ -280,5 +280,122 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v3.4.0-rc2"
+    },
+    "twig/extensions": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "4851df0afc426b8f07204379d21fca25b6df5d68"
+        }
+    },
+    "pagerfanta/pagerfanta": {
+        "version": "v1.0.5"
+    },
+    "doctrine/dbal": {
+        "version": "v2.6.3"
+    },
+    "doctrine/instantiator": {
+        "version": "1.1.0"
+    },
+    "doctrine/orm": {
+        "version": "v2.5.12"
+    },
+    "doctrine/doctrine-cache-bundle": {
+        "version": "1.3.2"
+    },
+    "jdorn/sql-formatter": {
+        "version": "v1.2.17"
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "1.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.6",
+            "ref": "44d3aa7752dd46f77ba11af2297a25e1dedfb4d0"
+        }
+    },
+    "javiereguiluz/easyadmin-bundle": {
+        "version": "1.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.17",
+            "ref": "66070ea553247b0cd5275e21d0fe5399a25f40be"
+        }
+    },
+    "symfony/maker-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
+    "doctrine/data-fixtures": {
+        "version": "v1.3.0"
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "2.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.4",
+            "ref": "f2c3a6246cb5f36176f870bdc2e5f5b3cf6c454c"
+        }
+    },
+    "egeloen/json-builder": {
+        "version": "3.0.0"
+    },
+    "egeloen/ckeditor-bundle": {
+        "version": "5.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "5.0",
+            "ref": "9bff1a2f13047142fd0ed93ba71cb7df5c86a2fa"
+        }
+    },
+    "ocramius/package-versions": {
+        "version": "1.1.3"
+    },
+    "zendframework/zend-eventmanager": {
+        "version": "3.2.0"
+    },
+    "zendframework/zend-code": {
+        "version": "3.3.0"
+    },
+    "ocramius/proxy-manager": {
+        "version": "2.1.1"
+    },
+    "doctrine/migrations": {
+        "version": "v1.6.2"
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
+        }
+    },
+    "jms/metadata": {
+        "version": "1.6.0"
+    },
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "c4f5755b37fb65b9c6a3cbdae91205c15a137ed4"
+        }
     }
 }

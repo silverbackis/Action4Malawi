@@ -34,8 +34,8 @@ function parseThumbnailElements(el) {
     };
 
 
-    $figCaption = $('figcaption', listEl)
-    if($figCaption.length > 1) {
+    $figCaption = $('figcaption', listEl);
+    if($figCaption.length > 0) {
       item.title = $figCaption.html();
     }
 

@@ -14,7 +14,7 @@
       Suggest a project for Action 4 Malawi
     {% endblock %}
     {% block text %}
-      <p>We are just starting our ambitious project to connect people over great distances. After the initial launch phase, we will be looking into further projects and developments. In the meantime, if you have a project you’d like to suggest, please register and write to us here.</p>
+      {{ page_content('suggest') }}
       {{ form_start(form, {attr: {class: 'form-container', novalidate: 'true'}}) }}
       {{ form_row(form.fullName) }}
       {{ form_row(form.email) }}

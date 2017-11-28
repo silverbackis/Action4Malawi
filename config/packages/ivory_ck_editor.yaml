@@ -1,0 +1,8 @@
+ivory_ck_editor:
+    input_sync: true
+    default_config: base_config
+    configs:
+        base_config:
+            contentsCss: ['https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', '/css/admin/ckeditor.css']
+            toolbar:
+                - { name: "styles", items: ['Format', 'Bold', 'Italic', 'Link', "HorizontalRule"] }

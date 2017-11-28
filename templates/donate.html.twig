@@ -9,7 +9,8 @@
       Donate to Action 4 Malawi
     {% endblock %}
     {% block text %}
-      <p>We appreciate all donations and all money donated goes to Malawi to help with current and upcoming projects. Action4Malawi does not have any overheads.</p>
+      {{ page_content('donate') }}
+
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="business" value="ahw@action4malawi.com" />
         <input type="hidden" name="cmd" value="_donations" />

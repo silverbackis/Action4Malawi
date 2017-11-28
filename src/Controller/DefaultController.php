@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\GalleryImage;
 use App\Entity\GalleryImageCollection;
 use App\Entity\ProjectSuggestion;
 use App\Entity\RegisteredUser;
@@ -165,10 +166,7 @@ class DefaultController extends AbstractController
      */
     public function gallery()
     {
-        $this->setTitle('Gallery');
-        $finder = new Finder();
-        $imageFiles = $finder->files()->name('/\.(jpg|png)$/')->in($this->projectDir . '/public/images/gallery');
-        $galleryImages = new GalleryImageCollection($imageFiles, $this->projectDir . '/public/');
+        $galleryImages = $this->getDoctrine()->getManager()->getRepository(GalleryImage::class)->findAll();
         return $this->render('gallery.html.twig', [
             'gallery' => $galleryImages
         ]);
