@@ -27,10 +27,10 @@
         "symfony/web-server-bundle": "^3.4@beta",
         "symfony/webpack-encore-pack": "^1.0",
         "symfony/yaml": "^3.4",
-        "vich/uploader-bundle": "^1.6"
+        "vich/uploader-bundle": "^1.6",
+        "doctrine/doctrine-fixtures-bundle": "^2.4"
     },
     "require-dev": {
-        "doctrine/doctrine-fixtures-bundle": "^2.4",
         "symfony/maker-bundle": "dev-master"
     },
     "config": {
