@@ -2,6 +2,7 @@ let webpack = require('webpack');
 let Encore = require('@symfony/webpack-encore');
 
 Encore
+  .enableSingleRuntimeChunk()
   .enablePostCssLoader()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
